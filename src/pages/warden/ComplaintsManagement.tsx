@@ -22,12 +22,13 @@ export function WardenComplaints() {
       resolved_at: status === 'resolved' ? new Date().toISOString() : undefined,
     })
     addNotification({
-      user_id: selected.student_id,
-      title: 'Complaint Update',
-      message: `Your complaint has been marked as "${status}".${note ? ` Note: ${note}` : ''}`,
-      type: status === 'resolved' ? 'success' : 'info',
-      is_read: false,
-    })
+  user_id: selected.student_id,
+  title: 'Complaint Update',
+  message: `Your complaint has been marked as "${status}".${note ? ` Note: ${note}` : ''}`,
+  type: status === 'resolved' ? 'success' : 'info',
+  is_read: false,
+  created_at: new Date().toISOString(),
+})
     setProcessing(false)
     setSelected(null)
     setNote('')

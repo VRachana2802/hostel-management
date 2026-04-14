@@ -49,13 +49,14 @@ export function WardenOutpass() {
       warden_note: note || undefined,
       parent_verified: parentVerified,
     })
-    addNotification({
-      user_id: actionModal.op.student_id,
-      title: `Outpass ${actionModal.type === 'approve' ? 'Approved' : 'Rejected'}`,
-      message: `Your outpass request for ${actionModal.op.destination} has been ${actionModal.type === 'approve' ? 'approved' : 'rejected'}.${note ? ` Note: ${note}` : ''}`,
-      type: actionModal.type === 'approve' ? 'success' : 'error',
-      is_read: false,
-    })
+   addNotification({
+  user_id: actionModal.op.student_id,
+  title: `Outpass ${actionModal.type === 'approve' ? 'Approved' : 'Rejected'}`,
+  message: `Your outpass request for ${actionModal.op.destination} has been ${actionModal.type === 'approve' ? 'approved' : 'rejected'}.${note ? ` Note: ${note}` : ''}`,
+  type: actionModal.type === 'approve' ? 'success' : 'error',
+  is_read: false,
+  created_at: new Date().toISOString(),
+})
     simulateEmailNotification(
       'student@hostel.com',
       `Outpass ${actionModal.type === 'approve' ? 'Approved' : 'Rejected'}`,
