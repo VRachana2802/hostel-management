@@ -332,9 +332,7 @@ The `dist/` folder contains the production-ready static site.
 - The app runs **100% on mock data** without any backend configuration
 - All state is managed in React Context — no Redux needed
 - Email/OTP notifications are **simulated** via `console.log` (check browser DevTools)
-- Face recognition uses the **webcam API** with simulated AI matching
 - QR scanning is **simulated** with visual animation
 
 ---
 
-*Built for placement showcase and real-world hostel management use.*
